@@ -1,3 +1,4 @@
+import 'package:booky_app/features/splash/presentation/views/spalsh_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
@@ -13,14 +14,5 @@ class BooklyApp extends StatelessWidget {
     return const GetMaterialApp(
       home: SplashView(),
     );
-  }
-}
-
-class SplashView extends StatelessWidget {
-  const SplashView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }

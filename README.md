@@ -1,4 +1,4 @@
-# booky_app
+# bookly_app
 
 A new Flutter project.
 

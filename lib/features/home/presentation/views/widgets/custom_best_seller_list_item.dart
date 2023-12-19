@@ -1,4 +1,7 @@
+import 'package:booky_app/constants.dart';
 import 'package:booky_app/core/utils/assets.dart';
+import 'package:booky_app/core/utils/style.dart';
+import 'package:booky_app/features/home/presentation/views/widgets/custom_best_seller_item_rating.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
@@ -24,19 +27,47 @@ class BestSellerListViewItem extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            width: 24,
+            width: 30,
           ),
-          const Column(
-            children: [
-              Text("data"),
-              Text("data"),
-              Row(
-                children: [
-                  Text("data"),
-                  Text("data"),
-                ],
-              )
-            ],
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.4,
+                  child: Text(
+                    "Harry potter and the Goblet of fire",
+                    style: Styles.textStyle20.copyWith(
+                      fontFamily: kGTSectraFine,
+                    ),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+                const SizedBox(
+                  height: 3,
+                ),
+                const Text(
+                  "J.K.Rowling",
+                  style: Styles.textStyle14,
+                ),
+                const SizedBox(
+                  height: 3,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Free",
+                      style: Styles.textStyle20.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const BookRating(),
+                  ],
+                ),
+              ],
+            ),
           )
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:booky_app/core/utils/style.dart';
+import 'package:booky_app/features/home/presentation/views/widgets/custom_best_seller_item_rating.dart';
 import 'package:booky_app/features/home/presentation/views/widgets/custom_book_details_view_app_bar.dart';
 import 'package:booky_app/features/home/presentation/views/widgets/custom_book_item.dart';
 import 'package:flutter/material.dart';
@@ -24,9 +25,8 @@ class BoolDetailsBody extends StatelessWidget {
           Text(
             "The Jungle Book",
             style: Styles.textStyle30.copyWith(
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-                decoration: TextDecoration.none),
+              fontWeight: FontWeight.bold,
+            ),
           ),
           const SizedBox(
             height: 6,
@@ -36,12 +36,17 @@ class BoolDetailsBody extends StatelessWidget {
             child: Text(
               "Rudyard Kipling",
               style: Styles.textStyle18.copyWith(
-                  color: Colors.white,
-                  decoration: TextDecoration.none,
-                  fontStyle: FontStyle.italic,
-                  fontWeight: FontWeight.w500),
+                fontStyle: FontStyle.italic,
+                fontWeight: FontWeight.w500,
+              ),
             ),
           ),
+          const SizedBox(
+            height: 18,
+          ),
+          const BookRating(
+            mainAxisAlignment: MainAxisAlignment.center,
+          )
         ],
       ),
     );

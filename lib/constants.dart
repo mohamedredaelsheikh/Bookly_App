@@ -8,3 +8,4 @@ const kGTSectraFine = "GT Sectra Fine";
 
 const kHomeView = '/homeview';
 const kBookDetailsView = '/bookdetailsview';
+const kSearchView = '/searchview';

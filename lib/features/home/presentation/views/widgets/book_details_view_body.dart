@@ -1,5 +1,6 @@
 import 'package:booky_app/core/utils/style.dart';
 import 'package:booky_app/features/home/presentation/views/widgets/custom_best_seller_item_rating.dart';
+import 'package:booky_app/features/home/presentation/views/widgets/custom_book_details_button_action.dart';
 import 'package:booky_app/features/home/presentation/views/widgets/custom_book_details_view_app_bar.dart';
 import 'package:booky_app/features/home/presentation/views/widgets/custom_book_item.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +47,11 @@ class BoolDetailsBody extends StatelessWidget {
           ),
           const BookRating(
             mainAxisAlignment: MainAxisAlignment.center,
-          )
+          ),
+          const SizedBox(
+            height: 37,
+          ),
+          const ButtonAction()
         ],
       ),
     );

@@ -39,11 +39,7 @@ class HomeRepoImpli implements HomeRepo {
 
       List<BookModel> books = [];
       for (var item in data['items']) {
-        try {
-          books.add(BookModel.fromJson(item));
-        } on Exception catch (e) {
-          books.add(BookModel.fromJson(item));
-        }
+        books.add(BookModel.fromJson(item));
       }
 
       return right(books);
@@ -66,11 +62,7 @@ class HomeRepoImpli implements HomeRepo {
 
       List<BookModel> books = [];
       for (var item in data['items']) {
-        try {
-          books.add(BookModel.fromJson(item));
-        } on Exception catch (e) {
-          books.add(BookModel.fromJson(item));
-        }
+        books.add(BookModel.fromJson(item));
       }
 
       return right(books);

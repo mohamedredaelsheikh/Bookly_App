@@ -51,7 +51,35 @@ class HomeRepoImpli implements HomeRepo {
       if (e is DioException) {
         return left(ServerFailure.fromDioException(e));
       }
-      return left(ServerFailure(errormessage: e.toString()));
+      return left(ServerFailure(
+          errormessage: 'Oops There was an error, Please try Again'));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<BookModel>>> fetchSimilarBook(
+      {required String category}) async {
+    try {
+      var data = await apiService.get(
+          endpoint:
+              "volumes?Filtering=free-ebooks&q=computer science&Sorting=relevance");
+
+      List<BookModel> books = [];
+      for (var item in data['items']) {
+        try {
+          books.add(BookModel.fromJson(item));
+        } on Exception catch (e) {
+          books.add(BookModel.fromJson(item));
+        }
+      }
+
+      return right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
+      }
+      return left(ServerFailure(
+          errormessage: 'Oops There was an error, Please try Again'));
     }
   }
 }

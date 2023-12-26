@@ -6,6 +6,7 @@ import 'package:booky_app/features/home/presentation/manger/similarbook/similarb
 import 'package:booky_app/features/home/presentation/views/book_details_view.dart';
 import 'package:booky_app/features/home/presentation/views/home_view.dart';
 import 'package:booky_app/features/search/presentation/views/searchview.dart';
+import 'package:booky_app/features/splash/presentation/views/intro_views.dart';
 import 'package:booky_app/features/splash/presentation/views/spalsh_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -15,6 +16,10 @@ abstract class AppRouter {
     routes: [
       GoRoute(
         path: '/',
+        builder: (context, state) => const IntroViews(),
+      ),
+      GoRoute(
+        path: kSplashView,
         builder: (context, state) => const SplashView(),
       ),
       GoRoute(

@@ -1,3 +1,5 @@
+import 'package:booky_app/constants.dart';
+import 'package:booky_app/core/utils/style.dart';
 import 'package:flutter/material.dart';
 
 class SlidingAnimationText extends StatelessWidget {
@@ -15,8 +17,9 @@ class SlidingAnimationText extends StatelessWidget {
       builder: (context, _) {
         return SlideTransition(
           position: slidingAnimation,
-          child: const Text(
-            "Enjoy Reading Free Books",
+          child: Text(
+            "Enjoy Reading Free Books.",
+            style: Styles.textStyle20.copyWith(fontFamily: kGTSectraFine),
             textAlign: TextAlign.center,
           ),
         );

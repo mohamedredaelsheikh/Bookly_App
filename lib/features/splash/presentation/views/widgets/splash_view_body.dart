@@ -3,6 +3,7 @@ import 'package:booky_app/core/utils/assets.dart';
 import 'package:booky_app/features/splash/presentation/views/widgets/sliding_animation_text.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lottie/lottie.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -37,6 +38,13 @@ class _SplashViewBodyState extends State<SplashViewBody>
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        SizedBox(
+          height: 150,
+          width: 150,
+          child: Center(
+            child: Lottie.asset("assets/videos/splach_view.json"),
+          ),
+        ),
         Image.asset(AssetsData.logoapp),
         const SizedBox(
           height: 4,

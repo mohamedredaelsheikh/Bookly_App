@@ -1,18 +1,19 @@
 import 'package:booky_app/core/widgets/custom_button.dart';
+import 'package:booky_app/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 
 class ButtonAction extends StatelessWidget {
-  const ButtonAction({super.key});
-
+  const ButtonAction({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 8.0),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Row(
         children: [
-          Expanded(
+          const Expanded(
             child: CustomButton(
-              text: r"19.99$",
+              text: "Free",
               backgroundcolor: Colors.white,
               textcolor: Colors.black,
               borderRadius: BorderRadius.only(
@@ -23,11 +24,12 @@ class ButtonAction extends StatelessWidget {
           ),
           Expanded(
             child: CustomButton(
+              onPressed: () {},
               text: "Free Preview",
               fontsize: 16,
-              backgroundcolor: Color(0xffEF8252),
+              backgroundcolor: const Color(0xffEF8252),
               textcolor: Colors.white,
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 bottomRight: Radius.circular(16),
                 topRight: Radius.circular(16),
               ),

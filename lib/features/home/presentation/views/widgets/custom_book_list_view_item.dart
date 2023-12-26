@@ -39,6 +39,7 @@ class BookListViewItem extends StatelessWidget {
                       style: Styles.textStyle20.copyWith(
                         fontFamily: kGTSectraFine,
                       ),
+                      textAlign: TextAlign.center,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -63,8 +64,8 @@ class BookListViewItem extends StatelessWidget {
                         ),
                       ),
                       const BookRating(
-                        bookrating: 0,
-                        count: 0,
+                        bookrating: 5,
+                        count: 125,
                       ),
                     ],
                   ),

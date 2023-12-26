@@ -1,9 +1,11 @@
+import 'package:booky_app/constants.dart';
 import 'package:booky_app/core/widgets/custom_circural_progress_indecator.dart';
 import 'package:booky_app/core/widgets/custom_error_message.dart';
 import 'package:booky_app/features/home/presentation/manger/fetchfeaturecubit/fetchfeaturebook_cubit.dart';
 import 'package:booky_app/features/home/presentation/views/widgets/custom_book_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class FeatureBooksListView extends StatelessWidget {
   const FeatureBooksListView({super.key});
@@ -22,10 +24,16 @@ class FeatureBooksListView extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8),
-                    child: CustomBookImage(
-                      urlImage: state
-                              .books[index].volumeInfo!.imageLinks?.thumbnail ??
-                          " ",
+                    child: GestureDetector(
+                      onTap: () {
+                        GoRouter.of(context)
+                            .push(kBookDetailsView, extra: state.books[index]);
+                      },
+                      child: CustomBookImage(
+                        urlImage: state.books[index].volumeInfo!.imageLinks
+                                ?.thumbnail ??
+                            " ",
+                      ),
                     ),
                   );
                 }),
